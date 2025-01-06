@@ -8,77 +8,77 @@ const categories = [
     name: 'Canvas Belts',
     folder: 'Canvas-belts',
     description: 'High-quality canvas belts for casual and formal wear',
-    mainImage: '/src/assets/images/Canvas-belts/canvas-one.jpeg'
+    mainImage: '/images/display-web/canvas-one.jpeg',
   },
   {
     id: 'drawcords',
     name: 'Drawcords',
     folder: 'Drawcords',
     description: 'Premium drawcords for various applications',
-    mainImage: '/src/assets/images/Drawcords/Drawcords-01.jpg'
+    mainImage: '/images/display-web/Drawcords-01.jpg'
   },
   {
     id: 'flat-drawcords',
     name: 'Flat Drawcords',
     folder: 'Flat-drawcord',
     description: 'Durable flat drawcords for multiple uses',
-    mainImage: '/src/assets/images/Flat-drawcord/flat-drawcord-one.jpeg'
+    mainImage: '/images/display-web/flat-drawcord-one.jpeg'
   },
   {
     id: 'jute-belts',
     name: 'Jute Belts',
     folder: 'Jute-Belts',
     description: 'Eco-friendly jute belts with unique designs',
-    mainImage: '/src/assets/images/Jute-Belts/jute-belts-one.jpeg'
+    mainImage: '/images/display-web/jute-belts-one.jpeg'
   },
   {
     id: 'keychains',
     name: 'Keychains',
     folder: 'Keychain',
     description: 'Stylish and durable keychains',
-    mainImage: '/src/assets/images/Keychain/Keychain-01.jpg'
+    mainImage: '/images/display-web/Keychain-01.jpg'
   },
   {
     id: 'ladies-pu-belts',
     name: 'Ladies PU Belts',
     folder: 'Ladies-PU-Belts',
     description: 'Elegant PU belts designed for women',
-    mainImage: '/src/assets/images/Ladies-PU-Belts/ladies-pu-belts-one.jpeg'
+    mainImage: '/images/display-web/ladies-pu-belts-one.jpeg'
   },
   {
     id: 'round-drawcords',
     name: 'Round Drawcords',
     folder: 'Round-drowcord',
     description: 'Quality round drawcords for various applications',
-    mainImage: '/src/assets/images/Round-drowcord/Round-drowcord-01.jpeg'
+    mainImage: '/images/display-web/Round-drowcord-01.jpeg'
   },
   {
     id: 'silicon-badges',
     name: 'Silicon Badges',
     folder: 'Silicon-badges',
     description: 'Custom silicon badges for branding',
-    mainImage: '/src/assets/images/Silicon-badges/silicon-badges-one.jpeg'
+    mainImage: '/images/display-web/silicon-badges-one.jpeg'
   },
   {
     id: 'suspenders',
     name: 'Suspenders',
     folder: 'Suspenders',
     description: 'Classic and modern suspenders',
-    mainImage: '/src/assets/images/Suspenders/suspenders-one.jpeg'
+    mainImage: '/images/display-web/suspenders-one.jpeg'
   },
   {
     id: 'twill-tape',
     name: 'Twill Tape',
     folder: 'Twill-tape',
     description: 'High-quality twill tape for various uses',
-    mainImage: '/src/assets/images/Twill-tape/twill-tape-one.jpeg'
+    mainImage: '/images/display-web/twill-tape-one.jpeg'
   },
   {
     id: 'woven-badges',
     name: 'Woven Badges',
     folder: 'Woven-Badges',
     description: 'Professional woven badges for branding',
-    mainImage: '/src/assets/images/Woven-Badges/Woven-Badges-01.jpeg'
+    mainImage: '/images/display-web/Woven-Badges-01.jpeg'
   }
 ];
 
@@ -112,7 +112,7 @@ const ProductModal = ({ isOpen, onClose, category }) => {
       // Import all images from the category folder
       const importImages = async () => {
         try {
-          const imageContext = import.meta.glob('/src/assets/images/**/*.{jpeg,jpg,png}', { eager: true });
+          const imageContext = import.meta.glob('/public/images/**/*.{jpeg,jpg,png}', { eager: true });
           const categoryImages = Object.entries(imageContext)
             .filter(([path]) => path.includes(`/${category.folder}/`))
             .map(([path, module]) => ({
@@ -139,7 +139,7 @@ const ProductModal = ({ isOpen, onClose, category }) => {
     const message = encodeURIComponent(
       `Hi, I'm interested in the ${productName} shown on your website. Can you share more details?`
     );
-    window.open(`https://wa.me/+919768394480?text=${message}`, '_blank');
+    window.open(`https://wa.me/+917977011525?text=${message}`, '_blank');
   };
 
   return (
@@ -154,31 +154,37 @@ const ProductModal = ({ isOpen, onClose, category }) => {
             </div>
 
             <div className="flex-1 overflow-y-auto p-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {images.map((image, index) => (
-                  <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-                    <div className="aspect-w-1 aspect-h-1">
-                      <img
-                        src={image.path}
-                        alt={`${category?.name} ${index + 1}`}
-                        className="object-cover w-full h-full"
-                      />
+              {images.length > 0 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {images.map((image, index) => (
+                    <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+                      <div className="aspect-w-1 aspect-h-1">
+                        <img
+                          src={image.path}
+                          alt={`${category?.name} ${index + 1}`}
+                          className="object-cover w-full h-full"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <p className="text-sm text-gray-600 mb-3">
+                          {`Premium ${category?.name} made with high-quality materials`}
+                        </p>
+                        <button
+                          onClick={() => handleWhatsAppClick(category?.name, image.path)}
+                          className="w-full flex items-center justify-center space-x-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors duration-300"
+                        >
+                          <WhatsappIcon size={24} round />
+                          <span>Contact on WhatsApp</span>
+                        </button>
+                      </div>
                     </div>
-                    <div className="p-4">
-                      <p className="text-sm text-gray-600 mb-3">
-                        {`Premium ${category?.name} made with high-quality materials`}
-                      </p>
-                      <button
-                        onClick={() => handleWhatsAppClick(category?.name)}
-                        className="w-full flex items-center justify-center space-x-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors duration-300"
-                      >
-                        <WhatsappIcon size={24} round />
-                        <span>Contact on WhatsApp</span>
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-8">
+                  <p className="text-lg text-gray-600">Products are coming soon. Please check back later!</p>
+                </div>
+              )}
             </div>
 
             <div className="p-6 border-t">

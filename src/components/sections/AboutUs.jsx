@@ -30,7 +30,7 @@ const AboutUs = () => {
           <div className="mt-10 lg:mt-0">
             <div className="relative rounded-xl overflow-hidden shadow-lg">
               <video
-                src="/src/assets/videos/samsul-work.mp4"
+                src="/images/display-web/samsul-work.mp4"
                 className="w-full object-cover"
                 controls
                 autoPlay

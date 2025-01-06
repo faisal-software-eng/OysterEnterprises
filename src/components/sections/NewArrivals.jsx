@@ -5,25 +5,25 @@ const products = [
   {
     id: 1,
     name: 'Canvas Belt - Premium Series',
-    image: '/src/assets/images/Canvas-belts/canvas-one.jpeg',
+    image: '/images/display-web/canvas-one.jpeg',
     description: 'High-quality canvas belt with durable buckle',
   },
   {
     id: 2,
     name: 'Jute Belt Collection',
-    image: '/src/assets/images/Jute-Belts/jute-belts-one.jpeg',
+    image: '/images/display-web/jute-belts-one.jpeg',
     description: 'Eco-friendly jute belt with modern design',
   },
   {
     id: 3,
     name: 'Ladies PU Belt - Designer Series',
-    image: '/src/assets/images/Ladies-PU-Belts/ladies-pu-belts-one.jpeg',
+    image: '/images/display-web/ladies-pu-belts-one.jpeg',
     description: 'Elegant PU belt for women with premium finish',
   },
   {
     id: 4,
     name: 'Silicon Badge - Custom Design',
-    image: '/src/assets/images/Silicon-badges/silicon-badges-one.jpeg',
+    image: '/images/display-web/silicon-badges-one.jpeg',
     description: 'Custom silicon badge with your branding',
   }
 ];
@@ -33,7 +33,7 @@ const NewArrivals = () => {
     const message = encodeURIComponent(
       `Hi, I'm interested in the ${productName} shown on your website. Can you share more details?`
     );
-    window.open(`https://wa.me/+919768394480?text=${message}`, '_blank');
+    window.open(`https://wa.me/+917977011525?text=${message}`, '_blank');
   };
 
   return (
@@ -69,7 +69,7 @@ const NewArrivals = () => {
                   {product.description}
                 </p>
                 <button
-                  onClick={() => handleWhatsAppClick(product.name)}
+                  onClick={() => handleWhatsAppClick(product.name, product.image)}
                   className="w-full flex items-center justify-center space-x-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors duration-300 mt-auto"
                 >
                   <WhatsappIcon size={24} round />

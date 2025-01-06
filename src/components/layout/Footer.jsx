@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../../assets/images/logo.png';
+import logo from '../../../public/images/logo.png';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
@@ -21,7 +21,7 @@ const Footer = () => {
     ],
     social: [
       { icon: <FaFacebookF />, name: 'Facebook', href: '#' },
-      { icon: <FaInstagram />, name: 'Instagram', href: '#' },
+      { icon: <FaInstagram />, name: 'Instagram', href: 'https://www.instagram.com/oysterenterprises11?igsh=Z2U2ZmJvZDJyN3g0' },
       { icon: <FaTwitter />, name: 'Twitter', href: '#' },
       { icon: <FaLinkedinIn />, name: 'LinkedIn', href: '#' },
     ],
@@ -87,8 +87,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center text-gray-400 justify-center sm:justify-start">
                 <FaPhone className="mr-3 text-blue-400 flex-shrink-0" />
-                <a href="tel:+917021006692" className="hover:text-white transition-colors duration-300">
-                  +91 7021006692
+                <a href="tel:+917977011525" className="hover:text-white transition-colors duration-300">
+                  +91 777011525
                 </a>
               </li>
               <li className="flex items-center text-gray-400 justify-center sm:justify-start">

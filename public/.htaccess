@@ -1,0 +1,38 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Ensure the Browser Caches the Static Files Properly
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 1 hour"
+  ExpiresByType image/gif "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType video/mp4 "access plus 1 month"
+</IfModule>
+
+# Redirect All Requests to index.html (For React Router)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [QSA,L]
+
+# Serve MP4 Files Correctly
+AddType video/mp4 .mp4
+
+# Handle 404 Errors (Optional)
+ErrorDocument 404 /index.html
+
+# Security Headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "DENY"
+  Header set X-XSS-Protection "1; mode=block"
+  Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline';"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header always set Referrer-Policy "no-referrer-when-downgrade"
+  Header always set Permissions-Policy "geolocation=(), microphone=()"
+</IfModule>

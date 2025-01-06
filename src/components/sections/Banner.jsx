@@ -4,7 +4,7 @@ const Banner = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1441986300917-64674bd600d8')",
+          backgroundImage: "url('/images/display-web/banner-oyster.jpeg')",
           opacity: 0.5,
         }}
       ></div>

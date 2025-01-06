@@ -47,7 +47,7 @@ const ContactUs = () => {
   const socialLinks = [
     { icon: <FaFacebookF />, link: '#', label: 'Facebook' },
     { icon: <FaTwitter />, link: '#', label: 'Twitter' },
-    { icon: <FaInstagram />, link: '#', label: 'Instagram' },
+    { icon: <FaInstagram />, link: 'https://www.instagram.com/oysterenterprises11?igsh=Z2U2ZmJvZDJyN3g0', label: 'Instagram' },
     { icon: <FaLinkedinIn />, link: '#', label: 'LinkedIn' },
   ];
 
@@ -90,10 +90,10 @@ const ContactUs = () => {
                 <div className="flex-1 text-left">
                   <h3 className="text-lg font-medium text-gray-900">Phone Number</h3>
                   <a
-                    href="tel:+917021006692"
+                    href="tel:+917977011525"
                     className="mt-1 text-gray-600 hover:text-blue-600 transition-colors duration-300 block"
                   >
-                    +91 7021006692
+                    +91 7977011525
                   </a>
                 </div>
               </div>

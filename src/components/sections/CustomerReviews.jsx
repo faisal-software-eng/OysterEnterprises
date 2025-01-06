@@ -9,7 +9,7 @@ const CustomerReviews = () => {
       name: 'John Doe',
       rating: 5,
       comment: 'Excellent products and amazing customer service! Will definitely buy again.',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e',
+      image: '/images/display-web/cus-1.jpeg',
       date: '2024-12-15',
     },
     {
@@ -17,7 +17,7 @@ const CustomerReviews = () => {
       name: 'Jane Smith',
       rating: 5,
       comment: 'The quality exceeded my expectations. Highly recommended!',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80',
+      image: '/images/display-web/cus-2.jpeg',
       date: '2024-12-10',
     },
     {
@@ -25,7 +25,7 @@ const CustomerReviews = () => {
       name: 'Mike Johnson',
       rating: 4,
       comment: 'Great products at competitive prices. Very satisfied with my purchase.',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e',
+      image: '/images/display-web/cus-03.jpeg',
       date: '2024-12-05',
     },
   ];
